@@ -10,7 +10,9 @@ jobs:
     - uses: actions/checkout@v2
     - name: Restore dependencies
       run: dotnet restore --runtime 'linux-musl-x64'
-    - name: Build
+    - name: Build app
       run: dotnet build -c release --no-restore --verbosity normal --runtime 'linux-musl-x64' ./dotnet-issue-showcase/dotnet-issue-showcase.csproj
+    - name: Build tests
+      run: dotnet build -c release --no-restore --verbosity normal --runtime 'linux-musl-x64' ./tests/tests.csproj
     - name: Test
       run: dotnet test -c release --no-build --verbosity normal --runtime 'linux-musl-x64'
