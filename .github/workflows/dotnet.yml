@@ -15,4 +15,4 @@ jobs:
     - name: Build tests
       run: dotnet build -c release --no-restore --verbosity normal ./tests/tests.csproj
     - name: Test
-      run: dotnet test -c release --no-build --verbosity normal ./tests/tests.csproj
+      run: dotnet test -c release --no-build --verbosity normal
