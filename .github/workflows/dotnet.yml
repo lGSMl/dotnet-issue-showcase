@@ -9,7 +9,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Restore dependencies
-      run: dotnet restore --runtime 'linux-musl-x64'
+      run: dotnet restore
     - name: Build app
       run: dotnet build -c release --no-restore --verbosity normal ./dotnet-issue-showcase/dotnet-issue-showcase.csproj
     - name: Build tests
