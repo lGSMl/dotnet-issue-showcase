@@ -9,8 +9,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet restore --runtime 'linux-musl-x64'
     - name: Build
-      run: dotnet build -c release --no-restore
+      run: dotnet build -c release --no-restore --runtime 'linux-musl-x64'
     - name: Test
-      run: dotnet test -c release --no-build --verbosity normal
+      run: dotnet test -c release --no-build --verbosity normal --runtime 'linux-musl-x64'
